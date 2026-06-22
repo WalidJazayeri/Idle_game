@@ -114,10 +114,9 @@ export class GameScene extends Phaser.Scene {
   }
 
   private moveEnemiesTowardHero() {
-    this.enemies.children.each((child) => {
+    this.enemies.getChildren().forEach((child) => {
       const enemy = child as Enemy;
       this.physics.moveToObject(enemy, this.hero, 35 + this.save.wave * 2);
-      return true;
     });
   }
 
@@ -140,7 +139,7 @@ export class GameScene extends Phaser.Scene {
     let nearest: Enemy | null = null;
     let nearestDistance = Infinity;
 
-    this.enemies.children.each((child) => {
+    this.enemies.getChildren().forEach((child) => {
       const enemy = child as Enemy;
       const distance = Phaser.Math.Distance.Between(this.hero.x, this.hero.y, enemy.x, enemy.y);
 
@@ -148,8 +147,6 @@ export class GameScene extends Phaser.Scene {
         nearest = enemy;
         nearestDistance = distance;
       }
-
-      return true;
     });
 
     return nearest;

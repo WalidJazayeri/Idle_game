@@ -1,0 +1,70 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #101018;
+  color: white;
+}
+
+.app {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: minmax(320px, 1fr) 320px;
+  gap: 16px;
+  padding: 16px;
+}
+
+.game-shell {
+  display: grid;
+  place-items: center;
+  background: #171729;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 600px;
+}
+
+#phaser-container canvas {
+  display: block;
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+.panel {
+  background: #171729;
+  border-radius: 16px;
+  padding: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.panel h1 {
+  font-size: 22px;
+  margin: 0 0 8px;
+}
+
+.panel p {
+  opacity: 0.8;
+  line-height: 1.4;
+}
+
+.upgrade {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+}
